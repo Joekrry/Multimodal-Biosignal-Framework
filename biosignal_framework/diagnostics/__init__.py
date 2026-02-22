@@ -1,0 +1,1 @@
+"""Diagnostics sub-package: QC utilities and plots."""

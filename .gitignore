@@ -1,0 +1,39 @@
+# Byte-compile
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Virtual env
+.env
+.venv
+.venv-1/
+venv/
+env/
+
+# Unit test 
+htmlcov/
+.pytest_cache/
+.coverage
+coverage.xml
+*.log
+
+# IDE rubbish
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files ?????????????
+.DS_Store
+Thumbs.db
+
+# Project stuff
+get-pip.py
+pip-*.whl

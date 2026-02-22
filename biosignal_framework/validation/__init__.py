@@ -1,0 +1,1 @@
+"""Validation sub-package: signal quality checks."""
