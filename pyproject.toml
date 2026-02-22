@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "biosignal-framework"
+version = "1.0.0"
+description = "Robust Python framework for multimodal biosignal ingestion, cleaning, harmonisation, and BDF+ export."
+requires-python = ">=3.10"
+license = { text = "MIT" }
+readme = "README.md"
+keywords = ["EEG", "PPG", "biosignal", "BDF", "neuroscience", "signal-processing"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scipy>=1.10",
+    "pyEDFlib>=0.1.28",
+]
+
+[project.optional-dependencies]
+plot   = ["matplotlib>=3.7"]
+test   = ["pytest>=7.4", "pytest-cov>=4.1"]
+dev    = ["biosignal-framework[plot,test]", "black", "ruff", "mypy"]
+
+[project.scripts]
+biosignal     = "biosignal_framework.cli.main:main"
+## biosignal-gui script removed (GUI deleted)
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["biosignal_framework*"]
+
+[tool.pytest.ini_options]
+testpaths   = ["biosignal_framework/tests"]
+addopts     = "-v --tb=short"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
